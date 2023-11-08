@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <linK rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Roboto', sans-serif;
+    }
+    /*
+    #header {
+        text-align: center;
+        margin: 20px;
+
+    }
+    */
+
+    /* index page styling */
+    .box {
+        border: 2px solid;
+        width: 400px;
+        margin: 100px auto;
+        height: 400px;
+        background: white;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    .box h1 {
+    position :relative;
+    width:100%;
+    height :100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding : 70px 10% 0;
+        /*coll*/
+        text-align: center;
+        margin: 20px 10 px;
+    }
+
+    .box form .labels {
+        font-size: 20px;
+        margin: 10px 0px;
+    }
+
+    .box form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box form input {
+        width: 80%;
+        height: 20px;
+        padding: 5px;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .box form button {
+        width: 300px;
+        padding: 7px 8px;
+        border-radius: 20px;
+        background: black;
+        color: white;
+        font-size: 18px;
+        transition: 0.5s ease;
+    }
+
+    .box form button:hover {
+        cursor: pointer;
+        color: black;
+        background: white;
+    }
+
+    body {
+        background: black;
+    }
+
+    .main-heading {
+  margin-top: 50px;
+}
+</style>
+<body>
+    <!--<button class="btn btn-success">contact</button>-->
+    {{>navbar}}
+    <div class="contanier-fluid mt-5 about-style" id="loginid" >
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <h1 class="text-center main-heading">Login In</h1>
+                    <p class="text-center sub-heading">grow your business with us </p>
+                <div class="row">
+                    <div class="col-md-5 col-12 mx-auto">
+                        <!--
+                        <form action="/LoginIn" method ="POST">
+    <div class="form-group" >
+    <label for="exampleInputPassword1">Name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="FullName" name="name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword">Phone</label>
+    <input type="number" class="form-control" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="Phone Number">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword">Message</label>
+    <input type="number" class="form-control" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="Message" name="message">
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+-->     <div class="box">
+         <form action="/login" method="POST">
+            <labels class="labels">Email</labels>
+            <input type="email" placeholder="Email" name="username" required>
+            <labe class="labels">Password</labe>
+            <input type="password" name="password" placeholder="Password" required>
+            <button>Login</button>
+                <div class="card">
+                    <div class="card-body">
+                        <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+                            <i class="fab fa-google"></i>
+                               <button>sign Up with Google</button>
+                        </a>
+                     </div>
+                </div>
+            
+            {{#if messages.error}}
+            <div style="text-align:center ;color:red;">{{messages.error}} </div>
+            {{/if}}
+        </form>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="../jq/jquery.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.js" type="text/javascript"></script>
+     
+
+</body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+
+<body>
+    {{>navbar}}
+    
+        
+        
+
+</body>
+-->
